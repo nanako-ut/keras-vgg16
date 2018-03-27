@@ -34,11 +34,11 @@ for file_name in file_list:
     if len(faces) > 0:
         for x, y, w, h in faces:
             # 顔を抜き出し保存
-            cv2.imwrite(save_path + 'face_' + str(face_detect_count) + '.jpg', img[y:y+h, x:x+w])
+            cv2.imwrite(save_path + 'face_' + str(count) + '.jpg', img[y:y+h, x:x+w])
             
             # 二値化
             _ ,binary = cv2.threshold(img[y:y+h, x:x+w], 120, 255, cv2.THRESH_BINARY)
-            cv2.imwrite(save_path + 'binary_' + str(face_detect_count) + '.jpg', binary)
+            cv2.imwrite(save_path + 'binary_' + str(count) + '.jpg', binary)
         
             count += 1
     else:
